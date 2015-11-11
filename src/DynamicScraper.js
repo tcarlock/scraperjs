@@ -53,7 +53,7 @@ DynamicScraper.prototype.loadBody = function(done) {
 			that.page = page;
 			page.setContent(that.body, that.url, function() {
 				that.inject(DynamicScraper.JQUERY_FILE, function(err) {
-					done(err ? new ScraperError('Couldn\'t inject jQuery into the page.') : undefined);
+					done(err ? new ScraperError('Couldn\'t inject jQuery into the page (' + err + ')') : undefined);
 				});
 			});
 		});
